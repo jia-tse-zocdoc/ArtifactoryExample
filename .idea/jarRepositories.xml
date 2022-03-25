@@ -26,5 +26,25 @@
       <option name="name" value="MavenLocal" />
       <option name="url" value="file:$USER_HOME$/.m2/repository/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://artifactory.zocdoc-ci.com/artifactory/gradle-remote/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="artifactory-maven-resolver" />
+      <option name="name" value="artifactory-maven-resolver" />
+      <option name="url" value="https://artifactory.zocdoc-ci.com/artifactory/gradle" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="artifactory-maven-resolver" />
+      <option name="name" value="artifactory-maven-resolver" />
+      <option name="url" value="https://artifactory.zocdoc-ci.com/artifactory/gradle-remote" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="artifactory-maven-resolver" />
+      <option name="name" value="artifactory-maven-resolver" />
+      <option name="url" value="https://artifactory.zocdoc-ci.com/artifactory/gradlesadfdf" />
+    </remote-repository>
   </component>
 </project>
