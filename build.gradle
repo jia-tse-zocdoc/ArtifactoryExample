@@ -28,6 +28,9 @@ allprojects {
     repositories {
         google()
         maven {
+
+//            For Chris:  if you use this commented line, it will have no build error
+//            url 'https://artifactory.zocdoc-ci.com/artifactory/gradle-remote'
             url 'https://artifactory.zocdoc-ci.com/artifactory/gradle'
             credentials {
                 username = "${artifactory_user}"
