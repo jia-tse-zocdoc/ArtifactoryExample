@@ -23,40 +23,38 @@ buildscript {
     }
 }
 
+
+tasks.register("hello") {
+    doLast{
+        String something = 'whatevs'
+        println "original $something"
+        println "upper case ${something.toUpperCase()}"
+
+        println project.name
+    }
+}
+
 allprojects {
     apply plugin: "com.jfrog.artifactory"
-    repositories {
-        google()
-        maven {
+}
 
-//            For Chris:  if you use this commented line, it will have no build error
-//            url 'https://artifactory.zocdoc-ci.com/artifactory/gradle-remote'
-            url 'https://artifactory.zocdoc-ci.com/artifactory/gradle'
-            credentials {
-                username = "${artifactory_user}"
-                password = "${artifactory_password}"
-            }
+
+artifactory {
+    contextUrl = "${artifactory_contextUrl}"   //The base Artifactory URL if not overridden by the publisher/resolver
+    publish {
+        repository {
+            repoKey = 'releases'
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+            maven = true
+        }
+    }
+    resolve {
+        repository {
+            repoKey = 'gradle'
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+            maven = true
         }
     }
 }
-//
-//
-//artifactory {
-//    contextUrl = "${artifactory_contextUrl}"   //The base Artifactory URL if not overridden by the publisher/resolver
-//    publish {
-//        repository {
-//            repoKey = 'releases'
-//            username = "${artifactory_user}"
-//            password = "${artifactory_password}"
-//            maven = true
-//        }
-//    }
-//    resolve {
-//        repository {
-//            repoKey = 'gradle'
-//            username = "${artifactory_user}"
-//            password = "${artifactory_password}"
-//            maven = true
-//        }
-//    }
-//}
